@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -9,6 +10,19 @@ pipeline {
         stage('Recuperation du code') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Installation des dependances') {
+            steps {
+                bat 'py -m pip install -r requirements.txt'
+                bat 'py -m pip install pytest'
+            }
+        }
+
+        stage('Tests automatises') {
+            steps {
+                bat 'py -m pytest -v'
             }
         }
 
