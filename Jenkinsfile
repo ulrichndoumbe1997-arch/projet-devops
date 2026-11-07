@@ -15,14 +15,14 @@ pipeline {
 
         stage('Installation des dependances') {
             steps {
-                bat 'py -m pip install -r requirements.txt'
-                bat 'py -m pip install pytest'
+                bat '"C:\\Users\\ulric\\AppData\\Local\\Programs\\Python\\Python315\\python.exe" -m pip install -r requirements.txt'
+                bat '"C:\\Users\\ulric\\AppData\\Local\\Programs\\Python\\Python315\\python.exe" -m pip install pytest'
             }
         }
 
         stage('Tests automatises') {
             steps {
-                bat 'py -m pytest -v'
+                bat '"C:\\Users\\ulric\\AppData\\Local\\Programs\\Python\\Python315\\python.exe" -m pytest -v'
             }
         }
 
